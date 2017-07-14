@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+t = int(input().strip())
+for a0 in range(t):
+    n,k = input().strip().split(' ')
+    n,k = [int(n),int(k)]
+    num = input().strip()
+    sum =[]
+    
+    for i in range(n-k+1):
+        total =1
+
+        for j in num[i:i+k]:
+            curr =int(j)
+            total*=curr
+        
+        sum.append(total)
+        
+    print(max(sum))
