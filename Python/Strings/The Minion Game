@@ -1,0 +1,21 @@
+def minion_game(string):
+    # your code goes here
+    vowels = "AEIOU"
+    
+    KevinScore = 0
+    StuartScore = 0
+    for i in range(len(string)):
+        if string[i] in vowels:
+            KevinScore += len(string)-i
+        else:
+            StuartScore += len(string)-i
+    if KevinScore> StuartScore:
+        print "Kevin", KevinScore
+    elif KevinScore< StuartScore:
+        print "Stuart", StuartScore
+    else:
+        print "Draw"
+        
+ if __name__ == '__main__':
+    s = raw_input()
+    minion_game(s)
