@@ -1,0 +1,14 @@
+class Add{
+    void add(int... values){
+        int sum =0;
+        String seperator = "";
+        for (int i: values){
+            sum+= i;
+            System.out.print(seperator + i);
+            seperator = "+";
+        }
+        System.out.println("="+sum);
+        
+            
+    }
+}
