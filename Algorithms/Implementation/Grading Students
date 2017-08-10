@@ -6,36 +6,6 @@ import java.util.regex.*;
 
 public class Solution {
 
-    static int[] solve(int[] grades){
-        // Complete this function
-        for (int grade: grades){
-            
-            if (grade >37){
-                
-                if (grade%5==3){
-                    grade+=2;
-                    System.out.println(grade);
-                    continue;
-                }
-                else if (grade%5 ==4){
-                    grade+=1;
-                    System.out.println(grade);
-                    continue;
-                }
-                
-                else{
-                    System.out.println(grade);
-                }
-                
-            }
-            else{
-                System.out.println(grade);
-            }
-        
-        }
-        return grades;
-    }
-
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -43,8 +13,10 @@ public class Solution {
         for(int grades_i=0; grades_i < n; grades_i++){
             grades[grades_i] = in.nextInt();
         }
-        int[] result = solve(grades);
         
+        for(int grade: grades){
+            System.out.println(grade<38 ||grade%5 <3 ? grade: grade+(5-grade%5));
+        }
         
 
     }
