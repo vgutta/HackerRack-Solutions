@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int[] getRecord(int[] s){
+        // Complete this function
+        int small = s[0];
+        int sCount = 0;
+        int large = s[0], lCount = 0;
+        int [] returns = new int[2];
+        for (Integer num: s){
+            if (num< small){
+                small = num;
+                sCount++;
+            }
+            if (num > large){
+                large = num;
+                lCount++;
+            }
+            
+        }
+        returns[0] = lCount;
+        returns[1] = sCount;
+        return returns;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] s = new int[n];
+        for(int s_i=0; s_i < n; s_i++){
+            s[s_i] = in.nextInt();
+        }
+        int[] result = getRecord(s);
+        String separator = "", delimiter = " ";
+        for (Integer val : result) {
+            System.out.print(separator + val);
+            separator = delimiter;
+        }
+        System.out.println("");
+    }
+}
