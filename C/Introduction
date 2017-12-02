@@ -1,0 +1,24 @@
+# given data types in the order int, long, char, double, float respectively on a line print each on on a different line
+# float is of precision 3 while double is of precision 9
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    // Complete the code.
+    int n;
+    long l;
+    char c;
+    float f;
+    double d;
+
+    
+    cin >> n >> l >> c >> f >> d;
+    cout << n << endl << l << endl << c << endl;
+    cout.precision(3);
+    cout << fixed << f << endl;
+    cout.precision(9);
+    cout << fixed << d << endl;
+   
+    return 0;
+}
