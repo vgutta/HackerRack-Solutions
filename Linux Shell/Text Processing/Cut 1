@@ -1,0 +1,4 @@
+#!/bin/bash
+# given n lines of input get the third character of each input line
+
+cut -c3
