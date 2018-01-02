@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int migratoryBirds(int n, int[] ar) {
+        // Complete this function
+        Arrays.sort(ar);
+        int maxVal = ar[0];
+        HashMap<Integer, Integer> newMap = new HashMap<>();
+        for(int i: ar){
+            Integer count = newMap.get(i);
+            newMap.put(i, count != null ? count+1 : 0);
+        }
+        //System.out.println(newMap);
+        int largestJ = ar[0];
+        for(int j: newMap.keySet()){
+            if(newMap.get(j) > maxVal){
+                maxVal = newMap.get(j);
+                largestJ = j;
+            }
+        }
+        return largestJ;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] ar = new int[n];
+        for(int ar_i = 0; ar_i < n; ar_i++){
+            ar[ar_i] = in.nextInt();
+        }
+        int result = migratoryBirds(n, ar);
+        System.out.println(result);
+    }
+}
