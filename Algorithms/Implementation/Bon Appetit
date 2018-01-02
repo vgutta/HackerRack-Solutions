@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.stream.*;
+
+public class Solution {
+
+    static String bonAppetit(int n, int k, int b, int[] ar) {
+        // Complete this function
+        
+        int total = 0;
+        for(int i=0; i<n; i++){
+            if(i == k){
+               continue; 
+            }
+            else{
+                total += ar[i];
+            }
+        }
+        total /= 2;
+        if(b - total == 0){
+            return "Bon Appetit";
+        }
+        else{
+            total = b - total;
+        }
+        return String.valueOf(total);
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int[] ar = new int[n];
+        for(int ar_i = 0; ar_i < n; ar_i++){
+            ar[ar_i] = in.nextInt();
+        }
+        int b = in.nextInt();
+        String result = bonAppetit(n, k, b, ar);
+        System.out.println(result);
+    }
+}
